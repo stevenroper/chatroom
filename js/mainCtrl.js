@@ -28,6 +28,7 @@ app.controller('mainCtrl', function($scope, parseService, $interval){
     $scope.getParseData();
   }, 1500)
 
+  //Posts an annoying message every 5 seconds
   // $interval(function(){
   //   parseService.postData("Bow before Skeletor!")
   // }, 5000);

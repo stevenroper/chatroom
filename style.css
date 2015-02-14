@@ -38,3 +38,9 @@ p{
   color: #a9a9a9;
   font-size: 10px;
 }
+
+.orderSelector {
+  margin: 0px auto;
+  margin-bottom: 10px;
+  width: 40%;
+}
