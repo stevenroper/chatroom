@@ -6,16 +6,21 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>ChatRoom</title>
   </head>
+
   <body ng-controller="mainCtrl">
+
     <div class="main-container">
       <h1> DevMountain Chat Room </h1>
       <form ng-submit="postData()">
         <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
       </form>
+      <input class='form-control text-box' type='text' placeholder='Find in posts...' ng-model='searchTerm'>
+
       <div class="messages-container">
-        <p ng-repeat="message in messages"> {{message.text}} <span class='timestamp'>{{message.createdAt | date:'EEEE @ h:mma'}}</span></p>
+        <p ng-repeat="message in messages | filter:searchTerm"> {{message.text}} <span class='timestamp'>{{message.createdAt | date:'EEEE @ h:mma'}}</span></p>
       </div>
     </div>
+
     <script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
     <script src="js/app.js"></script>
