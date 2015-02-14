@@ -15,13 +15,13 @@
         <input class="form-control text-box" type="text" ng-model="message" placeholder="Message">
       </form>
       <input class='form-control text-box' type='text' placeholder='Find in posts...' ng-model='searchTerm'>
-      <!-- <select class=' form-control orderSelector' ng-model="order">
+      <select class=' form-control orderSelector' ng-model="order">
         <option value='true'>Ascending by Time</option>
         <option value ='false'>Descending by Time</option>
-      </select> -->
+      </select>
 
       <div class="messages-container">
-        <div class='panel panel-default' ng-repeat="message in messages | filter:searchTerm">
+        <div class='panel panel-default' ng-repeat="message in messages | filter:searchTerm | orderBy:'createdAt':order">
           <div class='panel-body'>
             <p> {{message.text}} <span class='timestamp'>{{message.createdAt | date:'EEEE @ h:mma'}}</span></p>
           </div>
