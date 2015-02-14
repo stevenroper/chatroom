@@ -21,7 +21,11 @@
       </select> -->
 
       <div class="messages-container">
-        <p ng-repeat="message in messages | filter:searchTerm | orderBy:message.createdAt:order"> {{message.text}} <span class='timestamp'>{{message.createdAt | date:'EEEE @ h:mma'}}</span></p>
+        <div class='panel panel-default' ng-repeat="message in messages | filter:searchTerm">
+          <div class='panel-body'>
+            <p> {{message.text}} <span class='timestamp'>{{message.createdAt | date:'EEEE @ h:mma'}}</span></p>
+          </div>
+        </div>
       </div>
     </div>
 
